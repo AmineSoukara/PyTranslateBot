@@ -1,14 +1,15 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputTextMessageContent, InlineQueryResultArticle
 from gpytranslate import Translator
+from config import Config
 import sqlite3, string
 
 
 bot = Client(
     "APP_NAME",
-    api_id=API_ID,
-    api_hash="API_HASH",
-    bot_token= "TOKEN"
+    api_id = Config.API_ID,
+    api_hash = Config.API_HASH,
+    bot_token = Config.BOT_TOKEN
 )
 
 db = sqlite3.connect("userlanguages.db")
